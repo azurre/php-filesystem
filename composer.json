@@ -1,0 +1,25 @@
+{
+    "name": "azurre/php-filesystem",
+    "description": "Helper with filesystem operations",
+    "version": "1.0",
+    "keywords": ["filesystem","recursive", "copy", "move", "delete"],
+    "authors": [
+        {
+            "name": "Aleksandr Milenin",
+            "email": "admin@azrr.info"
+        }
+    ],
+    "require": {
+        "php": ">=8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Azurre\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "homepage": "https://github.com/azurre/php-filesystem",
+    "support": {
+        "issues": "https://github.com/azurre/php-filesystem/issues"
+    }
+}
