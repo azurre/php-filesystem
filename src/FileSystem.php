@@ -77,4 +77,26 @@ class FileSystem
 
         return rmdir($path);
     }
+
+    public static function chmod(string $path, int $permission, bool $recursive = false): bool {
+        if (is_file($path)) {
+            echo "Chmod $path with $permission\n";
+            return chmod($path, $permission);
+        }
+        if (!is_dir($path)) {
+            return false;
+        }
+
+        $files = scandir($path);
+        foreach ($files as $file) {
+            if ($file == '.' || $file == '..') {
+                continue;
+            }
+            $filePath = $path . DIRECTORY_SEPARATOR . $file;
+            echo "$filePath\n";
+            static::chmod($filePath, $permission, $recursive);
+        }
+
+        return true;
+    }
 }
